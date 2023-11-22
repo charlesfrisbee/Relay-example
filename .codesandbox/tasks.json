@@ -1,0 +1,43 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "name": "Install Dependencies",
+      "command": "yarn install"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "start": {
+      "name": "start",
+      "command": "yarn start",
+      "runAtStart": true
+    },
+    "build": {
+      "name": "build",
+      "command": "yarn build"
+    },
+    "test": {
+      "name": "test",
+      "command": "yarn test"
+    },
+    "update-schema": {
+      "name": "update-schema",
+      "command": "yarn update-schema"
+    },
+    "relay": {
+      "name": "relay",
+      "command": "yarn relay"
+    },
+    "watch_relay": {
+      "name": "watch_relay",
+      "command": "yarn watch_relay"
+    },
+    "concurrently --kill-others --names \\\"server,compiler\\\" \\\"NODE_ENV=development babel-node scripts/start.js\\\" \\\"yarn run watch_relay\\\"": {
+      "name": "concurrently --kill-others --names \\\"server,compiler\\\" \\\"NODE_ENV=development babel-node scripts/start.js\\\" \\\"yarn run watch_relay\\\"",
+      "command": "concurrently --kill-others --names \\\"server,compiler\\\" \\\"NODE_ENV=development babel-node scripts/start.js\\\" \\\"yarn run watch_relay\\\"",
+      "runAtStart": true
+    }
+  }
+}
